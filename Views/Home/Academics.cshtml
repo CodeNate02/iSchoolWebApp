@@ -1,0 +1,118 @@
+﻿@model iSchoolWebApp.Models.AcademicsRootModel
+@{
+    ViewData["Title"] = Model.title;
+}
+<h1> @Model.title </h1>
+<asp:Button text="Click Me!" />
+<!--Undergrad / Graduate tabs-->
+<div class="tabs">
+    <ul>
+        <!-- Program tabs -->
+        <li><a href="#underGrad">Undergraduate Programs</a></li>
+        <li><a href="#graduate">Graduate Programs</a></li>
+    </ul>
+    <div id="underGrad">
+        <div class="degrees">
+            <!-- Generate Undergraduate degree divs-->
+            @foreach (var degree in Model.degrees.undergraduate)
+            {
+                <div class="degree">
+                    <h2> @degree.title  </h2>
+                    <p> @degree.description</p>
+                    <h3> Concentrations </h3>
+                    <ul>
+                        <!-- List concentrations -->
+                        @foreach (var concentration in degree.concentrations)
+                        {
+                            <li>
+                                @concentration
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+        <!-- Undergrad Minors -->
+        <div id="minors">
+            <h3> Minors </h3>
+            <ul class="minorButtons">
+                <!-- List each minor-->
+                @foreach (var minor in Model.minors)
+                {
+                    String minorLink = "#" + minor.name;
+                    <li class="minorButton clickable">
+                        <a href="@minorLink">@minor.title</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <!-- Generate magneficPopup divs for each minor-->
+    <div id="magnificHolder">
+        @foreach (var minor in Model.minors)
+        {
+
+            <div class="magnific minor" id="@minor.name">
+                <h3 class="mCode"> @minor.name</h3>
+                <h2 class="mTitle"> @minor.title </h2>
+                <p class="mDescription">  @minor.description </p>
+                <h4> Required Courses </h4>
+                <p> Hover for more information</p>
+                <ul>
+                    @foreach (String course in minor.courses)
+                    {
+                        <li >
+                            <p class="minorCourse" title="@Model.courses[course].description"> @Model.courses[course].title.Replace("&amp;", "&") (@Model.courses[course].courseID) </p>
+                        </li>
+                    }
+                </ul>
+                <p class="note"> @minor.note </p>
+            </div>
+        }
+    </div>
+    <!-- Graduate Prograsms Tab -->
+    <div id="graduate">
+        <div class="degrees">
+            <!-- List All Graduate Degrees -->
+            @foreach (var degree in Model.degrees.graduate)
+            {
+                @if (degree.title != null)
+                {
+                    <div class="degree">
+                        <h2> @degree.title  </h2>
+                        <p> @degree.description</p>
+                        <h3> Concentrations </h3>
+                        <ul>
+                            @foreach (var concentration in degree.concentrations)
+                            {
+                                <li>
+                                    @concentration
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                }
+            }
+        </div>
+        <!-- List Certirficate Programs-->
+        <div id="certifications">
+            <h3> Certifications </h3>
+            <ul>
+                @foreach (var degree in Model.degrees.graduate)
+                {
+                    @if (degree.title == null)
+                    {
+                        foreach (String certificate in degree.availableCertificates)
+                        {
+                            <li class="certification">
+                                <p> @certificate </p>
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+

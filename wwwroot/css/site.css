@@ -1,0 +1,547 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+:root {
+    --bs-rit-orange: #F76902;
+    --bs-body-font-size: 1rem;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top-style: solid;
+    border-width: 5px !important;
+    border-color: #F76902 !important;
+}
+
+.border-bottom {
+    border-bottom-style: solid;
+    border-width: 5px !important;
+    border-color: #F76902 !important;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    padding: 12px;
+    /*line-height: 60px;*/ /* Vertically center the text there */
+}
+
+/* Content Background */
+.content {
+    background-image: url(https://www.rit.edu/computing/sites/rit.edu.computing/files/images/jumbotron/computing-departments-jumbotron.jpg), linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+    background-blend-mode: darken; /* Layer transparent black gradient over Golisano background*/
+    background-repeat: no-repeat; /* Do not repeat*/
+    background-size: cover; /*Cover screen*/
+    background-attachment: fixed; /* Stay fixed during scroll*/
+    background-position: center;
+    min-height: 100vh; /* Lock content height at screen*/
+}
+
+.content-body {
+    padding-bottom: 60px; /* Padding for footer */
+}
+
+.sidebar {
+    background-color: rgba(0, 0, 0, .98); /*Semi-transparent background*/
+    box-shadow: 7px 0px 10px #222222; /* Shadow*/
+}
+
+.sidebar-logo, .sidebar-logo-text {
+    color: var(--bs-rit-orange);
+}
+
+.footer {
+    background-color: black;
+}
+
+    .footer div {
+        margin: 0;
+        margin-left: 5px;
+    }
+
+.nav-link:hover {
+    color: #009CBD;
+}
+
+/* Text Formatting */
+h1, h2, h3, h4, h5, p, li, .nav-link {
+    color: white;
+}
+
+p{
+    font-size: 1rem;
+}
+
+a {
+    color: #009CBD;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.tabs {
+    border: none !important;
+}
+
+.ui-tabs-nav {
+    border: none;
+    border-bottom: 2px solid white;
+    background: none;
+    font-size: 1.375em;
+}
+
+.ui-tooltip {
+    background-color: var(--bs-rit-orange);
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.clickable {
+    background: rgba(0,0,0,.45) !important;
+    border: 5px solid white;
+    border-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(247,105,2,1) 100%) 30 stretch;
+    transition-duration: 1s;
+}
+
+    .clickable:hover {
+        border-image: linear-gradient(135deg, rgba(247,105,2,1) 0%, rgba(0,0,0,1) 100%) 30 stretch;
+    }
+    .sidebar-footer{
+        height:unset;
+        align-items: unset;
+    }
+    .sidebar-footer i{
+        align-self: center;
+        color: white;
+    }
+    .sidebar-footer .nav-link{
+        height: unset;
+        
+    }
+
+/* ABOUT CSS*/
+.quote {
+    width: 175ch;
+    max-width: 75vw;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    position: absolute;
+    top: 5%;
+    background-color:white;
+    padding: 20px;
+    border-radius: 4px;
+}
+.quote p{
+    width: 100%;
+    color: black;
+    margin: 0;
+}
+    .quote p i {
+        font-size: 1.2em;
+        text-shadow: 2px 2px var(--bs-rit-orange);
+    }
+    .quote .author {
+        text-align: right;
+        color: var(--bs-rit-orange);
+    }
+    .quote::after{
+        content: "";
+        width: 2em;
+        height: 2em;
+        position:absolute;
+        background-color:white;
+        transform:rotate(45deg);
+        right:9ch;
+    }
+    .quote ~ h1 {
+        margin-top: 11rem;
+        text-decoration: underline #7C878E;
+    }
+.about {
+    padding: 2.5%;
+    margin: 0 4.5%;
+    border: outset 8px var(--bs-rit-orange);
+    text-align: center;
+}
+    .about p {
+        font-size: 1.2rem;
+    }
+    
+    .stats{
+        display: flex;
+        flex-wrap: wrap;
+        align-content:space-evenly;
+        justify-content:space-evenly;
+        
+    }
+
+.statistic {
+    background-color: var(--bs-rit-orange);
+    width: 30ch;
+    height: 12em;
+    padding: 15px;
+    box-sizing: content-box;
+    border: 10px solid rgba(255,255,255,.75);
+    margin: 25px;
+    border-radius: 25px;
+}
+.statistic p{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: black;
+    font-size: 1.25em;
+}
+.statistic h3{
+    font-size:2em;
+    font-weight:600;
+}
+/* ACADEMICS CSS */
+.degree {
+    border: 8px solid var(--bs-rit-orange);
+    border-radius: 2em;
+    padding: 6px;
+    background: rgba(0,0,0,.45);
+}
+
+    .degree > ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        flex-wrap: wrap;
+        align-content: center;
+        padding: 0;
+    }
+
+    /*    .degree h2 {
+        text-align: center;
+    }
+
+    .h3 {
+        text-align: center;
+    }*/
+
+    .degree p {
+        margin: 1em 5%;
+    }
+
+
+#magnificHolder {
+    display: none;
+}
+
+.degrees + div ul {
+    list-style-type: none;
+    display: flex;
+    flex-basis: 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.degrees + div li {
+    background: var(--bs-rit-orange);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 1em;
+    margin: 1em;
+    min-width: 40%;
+}
+
+    .degrees + div li * {
+        margin: 0;
+        padding: 1em;
+    }
+
+.minorButton a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+    .minorButton a:hover {
+        color: #009CBD;
+    }
+
+.minor {
+    margin: 5%;
+}
+
+    .minor h4, .minor h4 + p {
+        margin: 0 0 0 5%;
+    }
+
+    .minor ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style-type: none;
+    }
+
+        .minor ul li {
+            width: 30vmax;
+            padding: 16px;
+            background: rgba(0,0,0,.55);
+            border: 3px double var(--bs-rit-orange);
+            border-radius: 10px;
+            margin: 10px;
+            text-align: center;
+            justify-content: center;
+        }
+
+            .minor ul li p {
+                margin: 0;
+            }
+
+/* People CSS */
+.person {
+    display: flex;
+    align-items: center;
+    height: 10em;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 16px;
+}
+
+    .person div h2 {
+        text-align: left;
+    }
+
+    .person div {
+        pointer-events: none;
+    }
+
+    .person:hover {
+        padding: 5px;
+        background: rgba(0,0,0,.625);
+    }
+
+.personImage {
+    min-width: 10%;
+    height: 100%;
+    background-position: center !important;
+    background-size: cover !important;
+    object-fit: contain;
+    object-position: left;
+    margin-right: 1em;
+    border-radius: 20px;
+}
+
+.person:hover h2 {
+    color: #009CBD;
+}
+
+.person div p, .person div h2 {
+    margin: 0;
+    padding: 0;
+}
+/* Person Info Div*/
+.personInfo {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 2% 2% .25% 2%;
+    width: fit-content;
+    max-width: 80vw;
+    margin: auto;
+    box-sizing: border-box;
+    border: 10px double white;
+    border-radius: 20px;
+    background: rgba(0,0,0,.45);
+}
+
+    .personInfo img {
+        object-fit: contain;
+        max-height: 17vmax;
+        width: fit-content;
+        margin: auto;
+        border-radius: 1vh;
+    }
+
+    .personInfo p, .personInfo h4 {
+        text-align: center;
+        margin: 0;
+    }
+
+    .personInfo ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+        .personInfo ul li {
+            text-align: center;
+        }
+
+    .personInfo h4 {
+        margin-top: 2em;
+    }
+
+.personInterests {
+    margin-top: 10px !important;
+}
+
+    .personInterests li {
+        min-width: 45ch;
+        justify-content: center;
+        padding: 1em 0;
+        margin: 0 20px 20px 20px;
+        border: 3px outset var(--bs-rit-orange);
+        border-radius: 20px;
+        color: black;
+        background-color: white;
+        font-weight: bolder;
+    }
+
+.contacts li {
+    margin: 0 1ch;
+}
+
+/* CAREERS CSS*/
+.cDiv {
+    position: center;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 10px double white;
+    border-bottom:10px solid white;
+    border-radius: 15px;
+    position: relative;
+    background:rgba(0,0,0,.5);
+}
+.cDiv h2{
+    margin: 20px 0 0 0;
+}
+.cDiv p {
+    margin: 0 20px 5em 20px;
+}
+.cDiv a{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 5px;
+    width: 100%;
+}
+.cDiv a:hover{
+    color: white;
+    padding:8px;
+    text-decoration:none;
+}
+#careerInfo {
+    width: 72ch;
+    max-width: 100%;
+}
+#coopInfo {
+    width: 82ch;
+    max-width: 100%;
+}
+.tableButton{
+    text-align: center;
+}
+#coopTable, #empTable{
+    max-width: 90vw;
+    margin: auto;
+    background: rgba(247,105,2,.5);
+    border: 3px double white;
+    padding: 15px;
+    border-radius: 25px;
+    color: black;
+}
+    #coopTable a, #empTable a {
+    color: black !important;
+    }
+    #cNames, #eNames {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+#cNames li, #eNames li{
+    min-width: 25ch;
+    margin: 2ch;
+    text-align: center;
+}
+#cNames{
+    border-bottom: 3px solid black;
+    flex-wrap: wrap;
+}
+#cIntro{
+    margin: 0;
+    padding: 0;
+    margin: 25px;
+}
+#eNames{
+    border-top: 3px solid black;
+    flex-wrap:wrap-reverse;
+}
+table{
+    color: black;
+}

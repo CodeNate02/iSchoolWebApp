@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\Class.cs" />
+    <Compile Remove="Services\GetAbout.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\desktop.ini" />
+    <Content Remove="wwwroot\desktop.ini" />
+    <Content Remove="wwwroot\js\desktop.ini" />
+    <Content Remove="wwwroot\lib\bootstrap\desktop.ini" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\css\desktop.ini" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\desktop.ini" />
+    <Content Remove="wwwroot\lib\bootstrap\dist\js\desktop.ini" />
+    <Content Remove="wwwroot\lib\dashnav\css\desktop.ini" />
+    <Content Remove="wwwroot\lib\dashnav\desktop.ini" />
+    <Content Remove="wwwroot\lib\desktop.ini" />
+    <Content Remove="wwwroot\lib\jquery-ui\desktop.ini" />
+    <Content Remove="wwwroot\lib\jquery-validation-unobtrusive\desktop.ini" />
+    <Content Remove="wwwroot\lib\jquery-validation\desktop.ini" />
+    <Content Remove="wwwroot\lib\jquery-validation\dist\desktop.ini" />
+    <Content Remove="wwwroot\lib\jquery\desktop.ini" />
+    <Content Remove="wwwroot\lib\jquery\dist\desktop.ini" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\desktop.ini" />
+    <None Remove="desktop.ini" />
+    <None Remove="Models\desktop.ini" />
+    <None Remove="Properties\desktop.ini" />
+    <None Remove="Services\desktop.ini" />
+    <None Remove="Views\desktop.ini" />
+    <None Remove="Views\Home\desktop.ini" />
+    <None Remove="Views\Shared\desktop.ini" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\datatables\js\dataTables.bootstrap.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.bootstrap.min.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.bootstrap4.min.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.bootstrap5.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.bootstrap5.min.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.bulma.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.bulma.min.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.dataTables.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.dataTables.min.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.foundation.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.foundation.min.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.jqueryui.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.jqueryui.min.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.semanticui.js" />
+    <None Include="wwwroot\lib\datatables\js\dataTables.semanticui.min.js" />
+    <None Include="wwwroot\lib\datatables\js\jquery.dataTables.js" />
+    <None Include="wwwroot\lib\datatables\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\lib\jquery-ui\external\jquery\jquery.js" />
+    <None Include="wwwroot\lib\perfect-scrollbar\perfect-scrollbar.common.js" />
+    <None Include="wwwroot\lib\perfect-scrollbar\perfect-scrollbar.esm.js" />
+    <None Include="wwwroot\lib\perfect-scrollbar\perfect-scrollbar.js" />
+    <None Include="wwwroot\lib\perfect-scrollbar\perfect-scrollbar.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>

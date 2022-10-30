@@ -1,0 +1,26 @@
+﻿@model iSchoolWebApp.Models.AboutRootModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="quote">
+    <p>
+        <i class="fa-solid fa-quote-left"></i> @Model.About.Quote <i class="fa-solid fa-quote-right"></i>
+    </p>
+    <p class="author">
+        -@Model.About.QuoteAuthor
+    </p>
+</div>
+<section class="about">
+    <h1>@Model.About.Title</h1>
+    <p>@Model.About.Description</p>
+</section>
+<div class="stats">
+    @foreach(Statistic s in Model.Stats)
+            {
+                <div class="statistic">
+                    <h3> @s.value </h3>
+                    <p> @s.description </p>
+                </div>
+            }
+</div>

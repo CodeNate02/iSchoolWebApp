@@ -1,0 +1,84 @@
+﻿@model iSchoolWebApp.Models.CareerRootModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+<ul id="cNames">
+    @foreach(String n in Model.Careers.CareerNames){
+        <li> @n </li> 
+    }
+</ul>
+<h1 id="cIntro"> @Model.Careers.Introduction.title </h1>
+<ul id="eNames">
+    @foreach (String n in Model.Careers.EmployerNames)
+    {
+        <li> @n </li>
+
+    }
+</ul>
+<div class="cDiv" id="careerInfo">
+    <div>
+        <h2> @Model.Careers.Introduction.content[0].title </h2>
+        <p> @Model.Careers.Introduction.content[0].description </p>
+    </div>
+    <a class="clickable tableButton" href="#empTable"> Click Here to View Employment Table </a>
+</div>
+<div class="cDiv" id="coopInfo">
+    <div>
+        <h2> @Model.Careers.Introduction.content[1].title </h2>
+        <p> @Model.Careers.Introduction.content[1].description </p>
+    </div>
+    <a class="clickable tableButton" href="#coopTable"> Click Here to View Co-Op Table </a>
+</div>
+<div id="magnificHolder">
+    <div id="empTable">
+        <h2> iSchool Student Professional Employment </h2>
+        <table class="display compact">
+            <thead>
+                <tr>
+                    <th>Employer</th>
+                    <th>Degree</th>
+                    <th>City</th>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (TableEntry e in Model.Careers.ProTable)
+                {
+                    <tr>
+                        <td> @e.employer </td>
+                        <td> @e.degree</td>
+                        <td> @e.city </td>
+                        <td> @e.title </td>
+                        <td> @e.startDate </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="coopTable">
+        <h2> iSchool Student Co-Ops </h2>
+        <table class="display compact">
+            <thead>
+                <tr>
+                    <th>Employer</th>
+                    <th>Degree</th>
+                    <th>City</th>
+                    <th>Term</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (TableEntry e in Model.Careers.CoopTable)
+                {
+                    <tr>
+                        <td> @e.employer </td>
+                        <td> @e.degree </td>
+                        <td> @e.city </td>
+                        <td> @e.term </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

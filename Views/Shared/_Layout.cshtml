@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - iSchoolWebApp</title>
+
+    <!--Bootstrap Stylesheet-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!--Jquery UI styles/theme-->
+    <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.theme.css" />
+
+    <!-- DashNav Styles-->
+    <link rel="stylesheet" href="~/lib/dashnav/css/style.min.css">
+
+    <!-- Slick styles/theme-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/lib/magneficpopup/magnific-popup.css" />
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="~/lib/datatables/css/dataTables.jqueryui.min.css" />
+
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+
+</head>
+<body class="animate">
+    <!-- Navigation Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <a asp-controller="Home" asp-action="Index" class="sidebar-logo"><i class="fa-solid fa-computer"></i></a>
+            <a asp-controller="Home" asp-action="Index" class="sidebar-logo-text"><span>i</span>School</a>
+        </div>
+
+        <!-- Sidebar Navs -->
+        <div class="sidebar-body">
+            <nav class="nav-sidebar">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-circle-info"></i><span>About</span></a>
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Academics"><i class="fa-solid fa-graduation-cap"></i><span>Academics</span></a>
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Careers"><i class="fa-solid fa-briefcase"></i><span>Careers</span></a>
+            </nav>
+            <hr>
+            <nav class="nav-sidebar">
+                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="FacultyStaff"><i class="fa-solid fa-people-group"></i><span>Faculty &amp; Staff</span></a>
+            </nav>
+            <hr />
+            <nav class="nav-sidebar">
+                <a class="nav-link " href="@Model.Footer.social.twitter"><i class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+                <a class="nav-link " href="@Model.Footer.social.facebook"><i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
+            </nav>
+            <hr>
+        </div>
+        <div class="sidebar-footer nav-sidebar">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            @foreach (QuickLink q in Model.Footer.quickLinks)
+            {
+                <a class="nav-link" href="@q.href "><span>@q.title</span></a>
+            }
+            @*<div class="sPresence">
+            <h4> @Model.Footer.social.title </h4>
+            <o
+        </div>*@
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="content">
+        <!-- Sidebar open buttons-->
+        <div class="content-header">
+            <a id="contentMenu" href="#" class="content-menu d-none d-lg-flex"><i class="fa-regular fa-compass"></i></a>
+            <a id="mobileMenu" href="#" class="content-menu d-lg-none"><i class="fa-regular fa-compass"></i></a>
+        </div>
+
+        <!-- Site body-->
+        <div class="container content-body">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer border-top">
+                @Html.Raw(Model.Footer.copyright.html)
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <!-- JQuery, Bootstrap, FontAwesome-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/b711c81f52.js" crossorigin="anonymous"></script>
+
+    <!-- DashNav + reqs-->
+    <script src="~/lib/feathericons/feather.js"></script>
+    @*<script src="~/lib/perfect-scrollbar/perfect-scrollbar.js"></script>*@
+    <script src="~/lib/dashnav/js/script.js"></script>
+
+    <!-- JQuery UI -->
+    <script src="~/lib/jquery-ui/jquery-ui.js"></script>
+
+    <!-- Slick Carousels -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Magnefic Popup-->
+    <script type="text/javascript" src="~/lib/magneficpopup/jquery.magnific-popup.js"></script>
+
+    <!--DataTables-->
+    <script type="text/javascript" src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
